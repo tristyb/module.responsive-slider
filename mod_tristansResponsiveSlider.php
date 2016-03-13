@@ -16,10 +16,12 @@ $slides = mod_tristansResponsiveSlider::getSlides($params);
 
 // Add CSS
 $document = JFactory::getDocument();
-$document->addStyleSheet(JURI::base(true).'/modules/mod_tristansResponsiveSlider/assets/css/flexslider.css', 'text/css');
+$document->addStyleSheet(JURI::base(true).'/modules/mod_tristansResponsiveSlider/build/style.css', 'text/css');
+
+$document->addStyleDeclaration($params->get('customCSS'));
 
 // Add scripts
-$document->addScript(JURI::base(true).'/modules/mod_tristansResponsiveSlider/assets/js/jquery.flexslider.js');
+$document->addScript(JURI::base(true).'/modules/mod_tristansResponsiveSlider/build/scripts.min.js');
 
 // Add inline scripts
 $document->addScriptDeclaration('

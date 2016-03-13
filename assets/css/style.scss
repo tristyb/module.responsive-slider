@@ -14,8 +14,8 @@
  * ====================================================================================================================*/
 @font-face {
   font-family: 'flexslider-icon';
-  src: url('/modules/mod_tristansResponsiveslider/build/fonts/flexslider-icon.eot');
-  src: url('/modules/mod_tristansResponsiveslider/build/fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('/modules/mod_tristansResponsiveslider/build/fonts/flexslider-icon.woff') format('woff'), url('/modules/mod_tristansResponsiveslider/build/fonts/flexslider-icon.ttf') format('truetype'), url('/modules/mod_tristansResponsiveslider/build/fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  src: url('fonts/flexslider-icon.eot');
+  src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -46,6 +46,7 @@
 }
 .flexslider .slides > li {
   display: none;
+	position: relative;
   -webkit-backface-visibility: hidden;
 }
 .flexslider .slides img {
@@ -133,6 +134,7 @@ html[xmlns] .flexslider .slides {
 .flex-direction-nav a:before {
   font-family: "flexslider-icon";
   font-size: 40px;
+	margin-top: 10px;
   display: inline-block;
   content: '\f001';
   color: rgba(0, 0, 0, 0.8);
@@ -272,4 +274,21 @@ html[xmlns] .flexslider .slides {
     opacity: 1;
     right: 10px;
   }
+}
+
+.flex-caption{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.45);
+	color: white;
+	margin: 0;
+	padding: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.2;
+
+	@media only screen and (min-width: 48em){
+		font-size: 1rem;
+	}
 }
