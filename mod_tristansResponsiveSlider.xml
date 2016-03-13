@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="3.2" client="site" method="upgrade">
+
+	<name>Tristan's Responsive Slider</name>
+	<author>Tristan Brookes</author>
+	<creationDate>March 2016</creationDate>
+	<copyright>Copyright (C) 2016 Tristan Brookes</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>tristan@tristanbrook.es</authorEmail>
+	<authorURL>https://tristanbrook.es</authorURL>
+	<version>0.1</version>
+	<description>Once upon a time, I worked at Code 7 and made the Joomla modules you know and love. Since leaving a year ago they've not received any updates so consider this the spiritual successor. It keeps all the simplicity you love but with some new twists.</description>
+
+	<files>
+		<filename>mod_tristansResponsiveSlider.xml</filename>
+		<filename module="mod_tristansResponsiveSlider">mod_tristansResponsiveSlider.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>language</folder>
+		<folder>build</folder>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tristansResponsiveSlider.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tristansResponsiveSlider.sys.ini</language>
+	</languages>
+
+	<scriptfile>create_script.php</scriptfile>
+
+	<config>
+		<fields name="params">
+			<fieldset name="images" label="Images">
+				<field name="imageExplain" type="note" label="Use the media manager to upload images in the images/mod_tristansResponsiveSlider folder until this bug with repeatable fields (https://github.com/joomla/joomla-cms/issues/6882) is fixed in Joomla. Then the media inputs will be inline." />
+				<field name="slides" type="repeatable" icon="image" description="" label="Image">
+					<fieldset hidden="true" name="slides_modal" repeat="true">
+						<field name="slide_image" type="imagelist" label="Slide image" directory="/images/mod_tristansResponsiveSlider" hide_none="true" hide_default="true" />
+						<field name="slide_alt" type="text" label="Slide image alt"/>
+						<field name="slide_caption" type="textarea" label="Slide caption" rows="4" cols="" />
+					</fieldset>
+				</field>
+			</fieldset>
+
+			<fieldset name="animation" label="Animation options">
+				<field name="animation_type" type="radio" default="slide" label="Select an animation type" description="">
+					<option value="slide">Slide</option>
+					<option value="fade">Fade</option>
+				</field>
+				<field name="animation_direction" type="radio" default="horizontal" label="Select an animation direction" description="">
+					<option value="horizontal">Horizontal</option>
+					<option value="vertical">Vertical</option>
+				</field>
+				<field name="animation_reverse" type="radio" default="true" label="Reverse the animation direction?" description="">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="animation_loop" type="radio" default="true" label="Loop the slider indefinitely?" description="">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="smooth_height" type="radio" default="false" label="Animate slide height changes?" description="">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="slideshow_speed" type="number" default="7000" label="Slide visible time (ms)" description="" />
+				<field name="animation_speed" type="number" default="600" label="Slide animation time (ms)" description="" />
+			</fieldset>
+
+			<fieldset name="other" label="Other options">
+				<field name="randomize" type="radio" default="false" label="Randomise slide order?" description="">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="pause_on_hover" type="radio" default="false" label="Pause slider when hovering with mouse?" description="">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="control_nav" type="radio" default="true" label="Have dot navigation?" description="">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="direction_nav" type="radio" default="true" label="Have arrow navigation?" description="">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="keyboard" type="radio" default="true" label="Allow use of keyboard to navigate?" description="">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL"
+				description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+				description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL"
+				description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900"
+				label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+				description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+				<field name="cachemode" type="hidden" default="itemid">
+					<option value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
