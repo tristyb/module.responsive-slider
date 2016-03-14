@@ -12,19 +12,18 @@
 	<description>MOD_TRISTANSRESPONSIVESLIDER_DESC</description>
 
 	<files>
-		<filename>mod_tristansResponsiveSlider.xml</filename>
-		<filename module="mod_tristansResponsiveSlider">mod_tristansResponsiveSlider.php</filename>
+		<filename>mod_tristans_responsive_slider.xml</filename>
+		<filename module="mod_tristans_responsive_slider">mod_tristans_responsive_slider.php</filename>
 		<filename>helper.php</filename>
 		<filename>index.html</filename>
 		<folder>tmpl</folder>
-		<folder>assets</folder>
 		<folder>language</folder>
 		<folder>build</folder>
 	</files>
 
 	<languages>
-		<language tag="en-GB">language/en-GB/en-GB.mod_tristansResponsiveSlider.ini</language>
-		<language tag="en-GB">language/en-GB/en-GB.mod_tristansResponsiveSlider.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tristans_responsive_slider.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tristans_responsive_slider.sys.ini</language>
 	</languages>
 
 	<scriptfile>create_script.php</scriptfile>

@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 		compress: {
 			main: {
 				options: {
-					archive: "mod_tristansResponsiveSlider_0.x.x.zip",
+					archive: "mod_tristans_responsive_slider_0.x.x.zip",
 					pretty: true,
 					mode: 'zip'
 				},
@@ -67,8 +67,8 @@ module.exports = function(grunt) {
 					{expand: true, src: ['helper.php'], dest: '/'},
 					{expand: true, src: ['index.html'], dest: '/'},
 					{expand: true, src: ['create_script.php'], dest: '/'},
-					{expand: true, src: ['mod_tristansResponsiveSlider.php'], dest: '/'},
-					{expand: true, src: ['mod_tristansResponsiveSlider.xml'], dest: '/'},
+					{expand: true, src: ['mod_tristans_responsive_slider.php'], dest: '/'},
+					{expand: true, src: ['mod_tristans_responsive_slider.xml'], dest: '/'},
 				]
 			}
 		},
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
 				tasks: ["sass", "autoprefixer"]
 			},
 			compression: {
-				files: ['assets/**/*', 'language/**/*', 'tmpl/**/*', 'helper.php', 'mod_tristansResponsiveSlider.php', 'mod_tristansResponsiveSlider.xml', "Gruntfile.js"],
+				files: ['assets/**/*', 'language/**/*', 'tmpl/**/*', 'helper.php', 'mod_tristans_responsive_slider.php', 'mod_tristans_responsive_slider.xml', "Gruntfile.js"],
 				tasks: ["compress"]
 			}
 		},

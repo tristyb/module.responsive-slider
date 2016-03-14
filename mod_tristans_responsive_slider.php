@@ -12,16 +12,16 @@ JHtml::_('jquery.framework');
 require_once(dirname(__FILE__).'/helper.php');
 
 // Call the class for slides
-$slides = mod_tristansResponsiveSlider::getSlides($params);
+$slides = mod_tristans_responsive_slider::getSlides($params);
 
 // Add CSS
 $document = JFactory::getDocument();
-$document->addStyleSheet(JURI::base(true).'/modules/mod_tristansResponsiveSlider/build/style.css', 'text/css');
+$document->addStyleSheet(JURI::base(true).'/modules/mod_tristans_responsive_slider/build/style.css', 'text/css');
 
 $document->addStyleDeclaration($params->get('customCSS'));
 
 // Add scripts
-$document->addScript(JURI::base(true).'/modules/mod_tristansResponsiveSlider/build/scripts.min.js');
+$document->addScript(JURI::base(true).'/modules/mod_tristans_responsive_slider/build/scripts.min.js');
 
 // Add inline scripts
 $document->addScriptDeclaration('
@@ -46,4 +46,4 @@ $document->addScriptDeclaration('
 //keeps class suffix
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 
-require(JModuleHelper::getLayoutPath('mod_tristansResponsiveSlider'));;
+require(JModuleHelper::getLayoutPath('mod_tristans_responsive_slider'));;

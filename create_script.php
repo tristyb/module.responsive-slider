@@ -1,5 +1,5 @@
 <?php
-class mod_tristansResponsiveSliderInstallerScript
+class mod_tristans_responsive_sliderInstallerScript
 {
 
 	/**

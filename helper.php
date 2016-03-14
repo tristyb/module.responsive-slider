@@ -7,7 +7,7 @@
 
 defined('_JEXEC') or die;
 
-class mod_tristansResponsiveSlider{
+class mod_tristans_responsive_slider{
 	public static function getSlides($params){
 		$slides = json_decode($params->get("slides"), true);
 		$amount_of_slides = count($slides['slide_image']);
