@@ -13,6 +13,7 @@
 
 	<files>
 		<filename>mod_tristans_responsive_slider.xml</filename>
+		<filename>joomla_update.xml</filename>
 		<filename module="mod_tristans_responsive_slider">mod_tristans_responsive_slider.php</filename>
 		<filename>helper.php</filename>
     <filename>slide_form.xml</filename>
@@ -26,6 +27,10 @@
 		<language tag="en-GB">language/en-GB/en-GB.mod_tristans_responsive_slider.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.mod_tristans_responsive_slider.sys.ini</language>
 	</languages>
+
+	<updateservers>
+		<server type="extension" name="mod_tristans_responsive_slider" priority="1">https://tristanbrook.es/assets/files/joomla_update.xml</server>
+	</updateservers>
 
 	<config>
 		<fields name="params">
