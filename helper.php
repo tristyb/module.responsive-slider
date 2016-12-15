@@ -9,34 +9,35 @@ defined('_JEXEC') or die;
 
 class mod_tristans_responsive_slider{
 	public static function getSlides($params){
-		$slides = json_decode($params->get("slides"), true);
-		$amount_of_slides = count($slides['slide_image']);
+		$slides = json_decode(json_encode($params->get("slides_repeater")), true);
+		$amount_of_slides = count($slides);
 		$html = "";
+    // die(var_dump($slides));
 
 		// slide_image, slide_alt, slide_caption
 		if(is_array($slides) && !empty($slides)):
 
-			for($i = 0; $i < $amount_of_slides; $i++):
+			foreach($slides as $slideKey => $slide):
 				$alt = "";
 				$caption = "";
 
-				if($slides['slide_alt'][$i] !== ""):
-					$alt = $slides['slide_alt'][$i];
+				if($slide['slide_alt'] !== ""):
+					$alt = $slide['slide_alt'];
 				endif;
 
-				if($slides['slide_caption'][$i] !== ""):
-					$caption = $slides['slide_caption'][$i];
+				if($slide['slide_caption'] !== ""):
+					$caption = $slide['slide_caption'];
 				endif;
 
 				$html.= '<li>';
-				$html.= '<img src="/images/mod_tristansResponsiveSlider/'.$slides['slide_image'][$i].'" alt="'.$alt.'">';
+				$html.= '<img src="'.$slide['slide_image'].'" alt="'.$alt.'">';
 
 				if($caption !== ""):
 					$html.= '<p class="flex-caption">'.$caption.'</p>';
 				endif;
 
 				$html.= '</li>';
-			endfor;
+			endforeach;
 		endif;
 
 		return $html;

@@ -52,6 +52,8 @@
 .flexslider .slides img {
   width: 100%;
   display: block;
+  position: relative;
+  z-index: 1;
 }
 .flexslider .slides:after {
   content: "\0020";
@@ -279,14 +281,16 @@ html[xmlns] .flexslider .slides {
 .flex-caption{
 	position: absolute;
 	bottom: 0;
+  display: block;
 	left: 0;
-	right: 0;
 	background: rgba(0,0,0,0.45);
 	color: white;
 	margin: 0;
 	padding: 0.5rem;
+  z-index: 2;
 	font-size: 0.875rem;
 	line-height: 1.2;
+  width: 98.3%;
 
 	@media only screen and (min-width: 48em){
 		font-size: 1rem;

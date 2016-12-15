@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+  <fieldset name="slides">
+    <field name="slide_image" type="media" label="MOD_TRISTANSRESPONSIVESLIDER_SLIDE_IMAGE" directory="/images/mod_tristansResponsiveSlider" hide_none="true" hide_default="true" description="MOD_TRISTANSRESPONSIVESLIDER_SLIDE_IMAGE_DESC" />
+
+    <field name="slide_alt" type="text" label="MOD_TRISTANSRESPONSIVESLIDER_SLIDE_ALT" description="MOD_TRISTANSRESPONSIVESLIDER_SLIDE_ALT_DESC" />
+
+    <field name="slide_caption" type="textarea" label="MOD_TRISTANSRESPONSIVESLIDER_SLIDE_CAPTION" rows="4" cols="" description="MOD_TRISTANSRESPONSIVESLIDER_SLIDE_CAPTION_DESC" />
+  </fieldset>
+</form>

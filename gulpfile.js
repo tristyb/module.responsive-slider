@@ -37,25 +37,6 @@ gulp.task('watch', function() {
     }));
 });
 
-// gulp.task("lint", function() {
-//   return gulp.src(src_path + "js/scripts.js")
-//     .pipe(jshint())
-//     .pipe(jshint.reporter("jshint-stylish"))
-// 	.pipe(notify(function (file) {
-//       if (file.jshint.success) {
-//         // Don't show something if success
-//         return false;
-//       }
-//
-//       var errors = file.jshint.results.map(function (data) {
-//         if (data.error) {
-//           return "(" + data.error.line + ':' + data.error.character + ') ' + data.error.reason;
-//         }
-//       }).join("\n");
-//       return file.relative + " (" + file.jshint.results.length + " errors)\n" + errors;
-//     }));
-// });
-
 // compile js files and compress them
 gulp.task('build-js', function(){
 	return gulp.src([
@@ -73,7 +54,7 @@ gulp.task('build-js', function(){
 
 // compile sass and minify, autoprefix
 gulp.task('css', function() {
-  return gulp.src(app + 'sass/main.scss')
+  return gulp.src(app + 'css/style.scss')
 	  .pipe(plumber(function(error) {
       gutil.log(gutil.colors.red(error.message));
       notify().write(error);
@@ -91,12 +72,12 @@ gulp.task('css', function() {
 		  }),
 	  ]))
     .pipe(nano())
-	  .pipe(gulp.dest(dist + 'css'))
+	  .pipe(gulp.dest(dist))
     // .pipe(gulp.dest('_site/' + dist + 'css'))
 });
 
 // copy to joomla
-gulp.task('moveToDev', function() {
+gulp.task('moveToDev', ['build-js', 'css'], function() {
   return gulp.src(
       [
         'build/**/',
@@ -105,6 +86,7 @@ gulp.task('moveToDev', function() {
         'create_script.php',
         'helper.php',
         'index.html',
+        'slide_form.xml',
         'mod_tristans_responsive_slider.php',
         'mod_tristans_responsive_slider.xml'
       ], { base : '.' }
@@ -113,7 +95,7 @@ gulp.task('moveToDev', function() {
 });
 
 // compress a zip
-gulp.task('compress', function() {
+gulp.task('compress', ['build-js', 'css'], function() {
   return gulp.src(
       [
         'build/**/',
@@ -122,6 +104,7 @@ gulp.task('compress', function() {
         'create_script.php',
         'helper.php',
         'index.html',
+        'slide_form.xml',
         'mod_tristans_responsive_slider.php',
         'mod_tristans_responsive_slider.xml'
       ], { base : '.' }
@@ -130,6 +113,6 @@ gulp.task('compress', function() {
     .pipe(gulp.dest('dist/'))
 });
 
-gulp.task('dev', ['build-js', 'css', 'moveToDev']);
-gulp.task('build', ['build-js', 'css', 'compress']);
+gulp.task('dev', ['moveToDev']);
+gulp.task('build', ['compress']);
 gulp.task('default', ['dev', 'watch']);
