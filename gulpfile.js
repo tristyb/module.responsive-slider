@@ -5,6 +5,7 @@ const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
 const zip = require('gulp-zip');
 const del = require('del');
+const rename = require('gulp-rename');
 
 // Styles.
 const autoprefixer = require('autoprefixer');
@@ -75,6 +76,7 @@ function css() {
       autoprefixer(),
       nano(),
     ]))
+    .pipe(rename("mod_tristans_responsive_slider.min.css"))
     .pipe(gulp.dest(dist))
 };
 

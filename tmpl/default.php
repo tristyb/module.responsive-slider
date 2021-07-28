@@ -9,10 +9,12 @@
 
 ?>
 
-<div class="flexslider">
-	<ul class="slides">
-		<?php
-			echo $slides;
-		?>
-	</ul>
+<div class="resp-slider  glide">
+  <div class="resp-slider__track  glide__track" data-glide-el="track">
+    <ul class="resp-slider__slides  glide__slides">
+			<?php
+				echo $slides;
+			?>
+		</ul>
+	</div>
 </div>

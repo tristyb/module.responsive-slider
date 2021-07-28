@@ -12,7 +12,6 @@ class mod_tristans_responsive_slider{
 		$slides = json_decode(json_encode($params->get("slides_repeater")), true);
 		$amount_of_slides = count($slides);
 		$html = "";
-    // die(var_dump($slides));
 
 		// slide_image, slide_alt, slide_caption
 		if(is_array($slides) && !empty($slides)):
@@ -29,11 +28,11 @@ class mod_tristans_responsive_slider{
 					$caption = $slide['slide_caption'];
 				endif;
 
-				$html.= '<li>';
+				$html.= '<li class="resp-slider__slide  glide__slide">';
 				$html.= '<img src="'.$slide['slide_image'].'" alt="'.$alt.'">';
 
 				if($caption !== ""):
-					$html.= '<p class="flex-caption">'.$caption.'</p>';
+					$html.= '<p class="resp-slider__caption">'.$caption.'</p>';
 				endif;
 
 				$html.= '</li>';
