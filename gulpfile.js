@@ -1,25 +1,28 @@
-// GET ALL THE THINGS
-var gulp = require('gulp');
-var gutil = require("gulp-util");
-var notify = require('gulp-notify');
-var plumber = require('gulp-plumber');
-var zip = require('gulp-zip');
+// Utility Requirements.
+const gulp = require('gulp');
+const gutil = require("gulp-util");
+const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
+const zip = require('gulp-zip');
+const del = require('del');
 
-// sass
-var autoprefixer = require('autoprefixer');
-var nano = require('cssnano');
-var postcss = require('gulp-postcss');
-var sass = require('gulp-sass')(require('sass'));
+// Styles.
+const autoprefixer = require('autoprefixer');
+const nano = require('cssnano');
+const postcss = require('gulp-postcss');
+const sass = require('gulp-sass')(require('sass'));
 
-// javascript
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
+// Javascript.
+const webpack = require('webpack-stream');
+const webpackCompiler = require('webpack');
+const webpackConfig = require('./webpack.config.js');
 
-// project variables
-var app = './assets/'; // The source directory
-var dist = './build/'; // The output directory
+// Project variables
+const app = './assets/'; // The source directory.
+const dist = './build/'; // The output directory.
+const copyLocation = '/Applications/MAMP/htdocs/modules/mod_tristans_responsive_slider'; // The dev directory.
 
-// the watch task, keeps an eye on things to reun changes
+// The watch task, keeps an eye on things to reun changes.
 function watch() {
   // watch for changes inside src folder
   gulp.watch(app + 'css/style.scss', gulp.series('dev'));
@@ -38,24 +41,23 @@ function watch() {
 
 gulp.task(watch);
 
-// compile js files and compress them
+// Compile js files and compress them.
 function buildJs() {
-  return gulp.src([
-    app + "js/*"
-  ])
-    // forces gulp to output errors to terminal
-    .pipe(plumber())
-    // concat js files
-    .pipe(concat('scripts.min.js'))
-    // compress js files
-    .pipe(uglify())
-    // output file to dist
-    .pipe(gulp.dest(dist))
-};
+  if (process.argv.indexOf('build') > -1) {
+    webpackConfig.devtool = false;
+    webpackConfig.mode = 'production';
+  }
+
+  return gulp.src(`assets/js/scripts.js`)
+    .pipe(webpack(webpackConfig, webpackCompiler))
+    .pipe(
+      gulp.dest(dist)
+    );
+}
 
 gulp.task(buildJs);
 
-// compile sass and minify, autoprefix
+// Compile sass and minify, autoprefix.
 function css() {
   return gulp.src(app + 'css/style.scss')
     .pipe(plumber(function (error) {
@@ -74,12 +76,11 @@ function css() {
       nano(),
     ]))
     .pipe(gulp.dest(dist))
-  // .pipe(gulp.dest('_site/' + dist + 'css'))
 };
 
 gulp.task(css);
 
-// copy to joomla
+// Copy to joomla.
 function moveToDev() {
   return gulp.src(
     [
@@ -94,12 +95,12 @@ function moveToDev() {
       'mod_tristans_responsive_slider.xml'
     ], { base: '.' }
   )
-    .pipe(gulp.dest('/Applications/MAMP/htdocs/modules/mod_tristans_responsive_slider'))
+    .pipe(gulp.dest(copyLocation))
 };
 
 gulp.task(moveToDev);
 
-// compress a zip
+// Vompress a zip.
 function compress() {
   return gulp.src(
     [
@@ -120,6 +121,27 @@ function compress() {
 
 gulp.task(compress);
 
-gulp.task('dev', gulp.series('buildJs', 'css', 'moveToDev'));
-gulp.task('build', gulp.series('buildJs', 'css', 'compress'));
+function cleanDev() {
+  return del([
+    `${copyLocation}/**`,
+    `!${copyLocation}`,
+  ], {
+    force: true,
+  });
+}
+
+gulp.task(cleanDev);
+
+function cleanBuild() {
+  return del([
+    `${dist}**`,
+    `!${dist}`,
+    `!${dist}.gitkeep`,
+  ]);
+}
+
+gulp.task(cleanBuild);
+
+gulp.task('dev', gulp.series('cleanDev', 'buildJs', 'css', 'moveToDev'));
+gulp.task('build', gulp.series('cleanBuild', 'buildJs', 'css', 'compress'));
 gulp.task('default', gulp.series('dev', 'watch'));
