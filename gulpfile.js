@@ -22,12 +22,12 @@ var dist = './build/'; // The output directory
 // the watch task, keeps an eye on things to reun changes
 function watch() {
   // watch for changes inside src folder
-  gulp.watch(app + 'css/style.scss', ['dev']);
-  gulp.watch('./language/**/*', ['dev']);
-  gulp.watch('./tmpl/**/*', ['dev']);
-  gulp.watch('./*.php', ['dev']);
-  gulp.watch('./*.xml', ['dev']);
-  gulp.watch(app + 'js/**/*', ['dev']);
+  gulp.watch(app + 'css/style.scss', gulp.series('dev'));
+  gulp.watch('./language/**/*', gulp.series('dev'));
+  gulp.watch('./tmpl/**/*', gulp.series('dev'));
+  gulp.watch('./*.php', gulp.series('dev'));
+  gulp.watch('./*.xml', gulp.series('dev'));
+  gulp.watch(app + 'js/**/*', gulp.series('dev'));
 
   return gulp.src('.')
     .pipe(notify({
@@ -83,12 +83,13 @@ gulp.task(css);
 function moveToDev() {
   return gulp.src(
     [
-      'build/**/',
-      'language/**/',
-      'tmpl/**/',
+      'build/**/*',
+      'language/**/*',
+      'tmpl/**/*',
       'helper.php',
       'index.html',
       'slide_form.xml',
+      'joomla_update.xml',
       'mod_tristans_responsive_slider.php',
       'mod_tristans_responsive_slider.xml'
     ], { base: '.' }
@@ -102,12 +103,13 @@ gulp.task(moveToDev);
 function compress() {
   return gulp.src(
     [
-      'build/**/',
-      'language/**/',
-      'tmpl/**/',
+      'build/**/*',
+      'language/**/*',
+      'tmpl/**/*',
       'helper.php',
       'index.html',
       'slide_form.xml',
+      'joomla_update.xml',
       'mod_tristans_responsive_slider.php',
       'mod_tristans_responsive_slider.xml'
     ], { base: '.' }
