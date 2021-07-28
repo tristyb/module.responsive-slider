@@ -18,7 +18,7 @@ const webpackCompiler = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 
 // Project variables
-const app = './assets/'; // The source directory.
+const app = './src/'; // The source directory.
 const dist = './build/'; // The output directory.
 const copyLocation = '/Applications/MAMP/htdocs/modules/mod_tristans_responsive_slider'; // The dev directory.
 
@@ -48,7 +48,7 @@ function buildJs() {
     webpackConfig.mode = 'production';
   }
 
-  return gulp.src(`assets/js/scripts.js`)
+  return gulp.src(`src/js/scripts.js`)
     .pipe(webpack(webpackConfig, webpackCompiler))
     .pipe(
       gulp.dest(dist)
@@ -90,7 +90,6 @@ function moveToDev() {
       'helper.php',
       'index.html',
       'slide_form.xml',
-      'joomla_update.xml',
       'mod_tristans_responsive_slider.php',
       'mod_tristans_responsive_slider.xml'
     ], { base: '.' }
@@ -110,7 +109,6 @@ function compress() {
       'helper.php',
       'index.html',
       'slide_form.xml',
-      'joomla_update.xml',
       'mod_tristans_responsive_slider.php',
       'mod_tristans_responsive_slider.xml'
     ], { base: '.' }
