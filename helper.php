@@ -10,7 +10,6 @@ defined('_JEXEC') or die;
 class mod_tristans_responsive_slider{
 	public static function getSlides($params){
 		$slides = json_decode(json_encode($params->get("slides_repeater")), true);
-		$amount_of_slides = count($slides);
 		$html = "";
 
 		// slide_image, slide_alt, slide_caption
@@ -29,7 +28,7 @@ class mod_tristans_responsive_slider{
 				endif;
 
 				$html.= '<li class="resp-slider__slide  glide__slide">';
-				$html.= '<img src="'.$slide['slide_image'].'" alt="'.$alt.'">';
+				$html.= '<img class="resp-slider__image" src="'.$slide['slide_image'].'" alt="'.$alt.'">';
 
 				if($caption !== ""):
 					$html.= '<p class="resp-slider__caption">'.$caption.'</p>';

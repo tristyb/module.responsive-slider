@@ -26,7 +26,7 @@ const copyLocation = '/Applications/MAMP/htdocs/modules/mod_tristans_responsive_
 // The watch task, keeps an eye on things to reun changes.
 function watch() {
   // watch for changes inside src folder
-  gulp.watch(app + 'css/style.scss', gulp.series('dev'));
+  gulp.watch(app + 'css/*.scss', gulp.series('dev'));
   gulp.watch('./language/**/*', gulp.series('dev'));
   gulp.watch('./tmpl/**/*', gulp.series('dev'));
   gulp.watch('./*.php', gulp.series('dev'));

@@ -21,7 +21,7 @@ $document->addStyleSheet(JURI::base(true).'/modules/mod_tristans_responsive_slid
 $document->addStyleDeclaration($params->get('customCSS'));
 
 // Add scripts
-$document->addScript(JURI::base(true).'/modules/mod_tristans_responsive_slider/build/mod_tristans_responsive_slider.min.js');
+$document->addScript(JURI::base(true).'/modules/mod_tristans_responsive_slider/build/mod_tristans_responsive_slider.min.js', array(), array('async'=>'async'));
 
 // Add inline scripts
 // $document->addScriptDeclaration('

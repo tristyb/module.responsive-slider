@@ -1,0 +1,64 @@
+@use "sass:math";
+$font-size-base: 16px !default;
+
+// sass-lint:disable no-duplicate-properties
+///* ========================================================================
+//   #REM
+//   ======================================================================== */
+
+// Convert any px value into its rem equivalent.
+
+@function rem($value) {
+
+  @if (type-of($value) == number) {
+
+    @if (unit($value) != "px") {
+      @error "`#{$value}` needs to be a pixel value.";
+    }
+
+  } @else {
+    @error "`#{$value}` needs to be a number.";
+  }
+
+  @return math.div($value, $font-size-base) * 1rem;
+
+}
+
+// Mixin to create a declaration whose value is a rem unit. Also provide pixel
+// fallback.
+//
+// .simple-usage {
+//   @include rem(padding, 10px);
+// }
+
+@mixin rem($property, $value) {
+
+  @if (type-of($value) == number) {
+
+    @if (unit($value) != "px") {
+      @error "`#{$value}` needs to be a pixel value.";
+    }
+
+  } @else {
+    @error "`#{$value}` needs to be a number.";
+  }
+
+  // Provide a `px` fallback for old IEs not supporting `rem` values.
+  #{$property}: $value;
+  #{$property}: rem($value);
+
+}
+// sass-lint:enable no-duplicate-properties
+
+@function strip-units($number) {
+	@return math.div($number, $number * 0 + 1);
+}
+
+@function em($pixels, $context: $font-size-base, $unitless: false) {
+	@if ($unitless == false) {
+		@return math.div(strip-units($pixels), strip-units($context)) * 1em;
+	}
+	@else {
+		@return math.div(strip-units($pixels), strip-units($context));
+	}
+}
