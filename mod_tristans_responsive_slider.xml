@@ -41,27 +41,16 @@
 			</fieldset>
 
 			<fieldset name="animation" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_OPTIONS">
-				<field name="animation_type" type="radio" default="slide" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_TYPE" description="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_TYPE_DESC">
-					<option value="slide">MOD_TRISTANSRESPONSIVESLIDER_SLIDE</option>
-					<option value="fade">MOD_TRISTANSRESPONSIVESLIDER_FADE</option>
-				</field>
-				<field name="animation_direction" type="radio" default="horizontal" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_DIRECTION" description="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_DIRECTION_DESC">
-					<option value="horizontal">MOD_TRISTANSRESPONSIVESLIDER_HORIZONTAL</option>
-					<option value="vertical">MOD_TRISTANSRESPONSIVESLIDER_VERTICAL</option>
-				</field>
 				<field name="animation_reverse" type="radio" default="true" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_REVERSE" description="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_REVERSE_DESC">
 					<option value="true">JYES</option>
 					<option value="false">JNO</option>
 				</field>
+
 				<field name="animation_loop" type="radio" default="true" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_LOOP" description="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_LOOP_DESC">
 					<option value="true">JYES</option>
 					<option value="false">JNO</option>
 				</field>
-				<field name="smooth_height" type="radio" default="false" label="MOD_TRISTANSRESPONSIVESLIDER_SMOOTH_HEIGHT" description="MOD_TRISTANSRESPONSIVESLIDER_SMOOTH_HEIGHT_DESC">
-					<option value="true">JYES</option>
-					<option value="false">JNO</option>
-				</field>
-				<field name="slideshow_speed" type="number" default="7000" label="MOD_TRISTANSRESPONSIVESLIDER_SLIDE_SPEED" description="MOD_TRISTANSRESPONSIVESLIDER_SLIDE_SPEED_DESC" />
+
 				<field name="animation_speed" type="number" default="600" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_SPEED" description="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_SPEED_DESC" />
 			</fieldset>
 
@@ -70,18 +59,17 @@
 					<option value="true">JYES</option>
 					<option value="false">JNO</option>
 				</field>
-				<field name="pause_on_hover" type="radio" default="false" label="MOD_TRISTANSRESPONSIVESLIDER_PAUSE_ON_HOVER" description="MOD_TRISTANSRESPONSIVESLIDER_PAUSE_ON_HOVER_DESC">
-					<option value="true">JYES</option>
-					<option value="false">JNO</option>
-				</field>
+
 				<field name="control_nav" type="radio" default="true" label="MOD_TRISTANSRESPONSIVESLIDER_CONTROL_NAV" description="MOD_TRISTANSRESPONSIVESLIDER_CONTROL_NAV_DESC">
 					<option value="true">JYES</option>
 					<option value="false">JNO</option>
 				</field>
+
 				<field name="direction_nav" type="radio" default="true" label="MOD_TRISTANSRESPONSIVESLIDER_DIRECTION_NAV" description="MOD_TRISTANSRESPONSIVESLIDER_DIRECTION_NAV_DESC">
 					<option value="true">JYES</option>
 					<option value="false">JNO</option>
 				</field>
+
 				<field name="keyboard" type="radio" default="true" label="MOD_TRISTANSRESPONSIVESLIDER_KEYBOARD" description="MOD_TRISTANSRESPONSIVESLIDER_KEYBOARD_DESC">
 					<option value="true">JYES</option>
 					<option value="false">JNO</option>
