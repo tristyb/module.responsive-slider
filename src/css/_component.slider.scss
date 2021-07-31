@@ -1,7 +1,9 @@
 
 .resp-slider {}
 
-  .resp-slider__track {}
+  .resp-slider__track {
+    transition: height 0.2s ease-in-out;
+  }
 
     .resp-slider__slides {
       margin: 0;
