@@ -9,7 +9,15 @@
 
 ?>
 
-<div class="resp-slider  glide  js-resp-slider">
+<div
+	class="resp-slider  glide  js-resp-slider"
+	data-dot-navigation="<?php echo $params->get('control_nav'); ?>"
+	data-arrow-navigation="<?php echo $params->get('direction_nav'); ?>"
+	data-keyboard-navigation="<?php echo $params->get('keyboard'); ?>"
+	data-reverse="<?php echo $params->get('animation_reverse'); ?>"
+	data-loop="<?php echo $params->get('animation_loop'); ?>"
+	data-animation-ms="<?php echo $params->get('animation_speed'); ?>"
+>
   <div class="resp-slider__track  glide__track" data-glide-el="track">
     <ul class="resp-slider__slides  glide__slides">
 			<?php

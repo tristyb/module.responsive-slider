@@ -7,36 +7,42 @@
 
 defined('_JEXEC') or die;
 
-class mod_tristans_responsive_slider{
-	public static function getSlides($params){
+class mod_tristans_responsive_slider
+{
+	public static function getSlides($params)
+	{
 		$slides = json_decode(json_encode($params->get("slides_repeater")), true);
 		$html = "";
 
 		// slide_image, slide_alt, slide_caption
-		if(is_array($slides) && !empty($slides)):
+		if(is_array($slides) && !empty($slides)) {
 
-			foreach($slides as $slideKey => $slide):
+			if($params->get('randomize')) {
+				shuffle($slides);
+			}
+
+			foreach($slides as $slideKey => $slide) {
 				$alt = "";
 				$caption = "";
 
-				if($slide['slide_alt'] !== ""):
+				if($slide['slide_alt'] !== "") {
 					$alt = $slide['slide_alt'];
-				endif;
+				}
 
-				if($slide['slide_caption'] !== ""):
+				if($slide['slide_caption'] !== "") {
 					$caption = $slide['slide_caption'];
-				endif;
+				}
 
 				$html.= '<li class="resp-slider__slide  glide__slide">';
 				$html.= '<img class="resp-slider__image" src="'.$slide['slide_image'].'" alt="'.$alt.'">';
 
-				if($caption !== ""):
+				if($caption !== "") {
 					$html.= '<p class="resp-slider__caption">'.$caption.'</p>';
-				endif;
+				}
 
 				$html.= '</li>';
-			endforeach;
-		endif;
+			}
+		}
 
 		return $html;
 	}

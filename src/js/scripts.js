@@ -1,4 +1,4 @@
-import Glide, { Controls, Swipe } from '@glidejs/glide/dist/glide.modular.esm'
+import Glide, { Controls, Swipe, Keyboard } from '@glidejs/glide/dist/glide.modular.esm'
 import { siblings } from '@glidejs/glide/src/utils/dom';
 
 // https://github.com/glidejs/glide/issues/236#issuecomment-765090306
@@ -28,8 +28,6 @@ function ResizeSlider(Glide, Components, Events) {
     },
 
     updateTrackHeight() {
-      console.log('update track height');
-
       const activeSlide = document.querySelector(
         selectors.glideSlideNextActive
       );
@@ -37,8 +35,6 @@ function ResizeSlider(Glide, Components, Events) {
 
       const glideTrack = document.querySelector(selectors.glideTrack);
       const glideTrackHeight = glideTrack ? glideTrack.offsetHeight : 0;
-
-      console.log(`Active slide: ${activeSlide} activeSlideHeight: ${activeSlideHeight}`)
 
       if (activeSlideHeight !== glideTrackHeight) {
         glideTrack.style.height = `${activeSlideHeight}px`;
@@ -54,23 +50,25 @@ function ResizeSlider(Glide, Components, Events) {
   return Component;
 };
 
-// Equivilant to jQuery ready.
-const ready = function (fn) {
-  if (document.readyState != 'loading') {
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
-
 // Slider init function.
 function setupSlider() {
+
   const sliders = Array.from(document.querySelectorAll('.js-resp-slider'));
 
   sliders.forEach(slider => {
+    const dotNav = slider.dataset.dotNavigation;
+    const arrowNav = slider.dataset.arrowNavigation;
+    const keyboardNav = slider.dataset.keyboardNavigation;
+    const reverse = slider.dataset.reverse;
+    const loop = slider.dataset.loop;
+    const animationDuration = slider.dataset.animationMs;
+
     const glide = new Glide(slider, {
-      type: 'carousel',
-    }).mount({ Controls, Swipe, ResizeSlider });
+      type: loop === 'true' ? 'carousel' : 'slider',
+      keyboard: keyboardNav === 'true' ? true : false,
+      direction: reverse === 'true' ? 'rtl' : 'ltr',
+      animationDuration,
+    }).mount({ Controls, Swipe, Keyboard, ResizeSlider });
   });
 }
 

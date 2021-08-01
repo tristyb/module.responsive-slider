@@ -21,7 +21,7 @@ const webpackConfig = require('./webpack.config.js');
 // Project variables
 const app = './src/'; // The source directory.
 const dist = './build/'; // The output directory.
-const copyLocation = '/Applications/MAMP/htdocs/modules/mod_tristans_responsive_slider'; // The dev directory.
+const copyLocation = process.platform === 'darwin' ? '/Applications/MAMP/htdocs/modules/mod_tristans_responsive_slider' : '/mnt/c/MAMP/htdocs/modules/mod_tristans_responsive_slider'; // The dev directory.
 
 // The watch task, keeps an eye on things to reun changes.
 function watch() {
