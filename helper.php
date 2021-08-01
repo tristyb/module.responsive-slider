@@ -46,4 +46,9 @@ class mod_tristans_responsive_slider
 
 		return $html;
 	}
+
+	public static function getSlidesCount($params)
+	{
+		return count(json_decode(json_encode($params->get("slides_repeater")), true));
+	}
 }

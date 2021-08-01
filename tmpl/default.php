@@ -11,8 +11,6 @@
 
 <div
 	class="resp-slider  glide  js-resp-slider"
-	data-dot-navigation="<?php echo $params->get('control_nav'); ?>"
-	data-arrow-navigation="<?php echo $params->get('direction_nav'); ?>"
 	data-keyboard-navigation="<?php echo $params->get('keyboard'); ?>"
 	data-reverse="<?php echo $params->get('animation_reverse'); ?>"
 	data-loop="<?php echo $params->get('animation_loop'); ?>"
@@ -26,8 +24,18 @@
 		</ul>
 	</div>
 
-	<div class="resp-slider__arrows glide__arrows" data-glide-el="controls">
-    <button class="resp-slider__arrow glide__arrow" data-glide-dir="<">prev</button>
-    <button class="resp-slider__arrow resp-slider__arrow--next glide__arrow" data-glide-dir=">">next</button>
-  </div>
+	<?php if ($params->get('direction_nav') === 'true') { ?>
+		<div class="resp-slider__arrows glide__arrows" data-glide-el="controls">
+			<button class="resp-slider__arrow glide__arrow" data-glide-dir="<">prev</button>
+			<button class="resp-slider__arrow resp-slider__arrow--next glide__arrow" data-glide-dir=">">next</button>
+		</div>
+	<?php } ?>
+
+	<?php if ($params->get('direction_nav') === 'true') { ?>
+		<div data-glide-el="controls[nav]">
+			<?php for($i = 0; $i < $slidesCount; $i++){ ?>
+				<button data-glide-dir="=<?php echo $i; ?>"><?php echo $i; ?></button>
+			<?php } ?>
+		</div>
+	<?php } ?>
 </div>

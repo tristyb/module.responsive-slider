@@ -12,6 +12,7 @@ require_once(dirname(__FILE__).'/helper.php');
 
 // Call the class for slides
 $slides = mod_tristans_responsive_slider::getSlides($params);
+$slidesCount = mod_tristans_responsive_slider::getSlidesCount($params);
 
 // Add CSS
 $document = JFactory::getDocument();

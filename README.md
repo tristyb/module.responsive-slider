@@ -8,6 +8,6 @@ A slider module I created to continue the legacy of a popular, older slider I cr
 - Reverse ✔
 - Loop ✔
 - Animation time ✔
-- Dot navigation
-- Arrow navigation
+- Dot navigation ✔
+- Arrow navigation ✔
 - Keyboard navigation ✔
