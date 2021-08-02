@@ -16,7 +16,6 @@ class mod_tristans_responsive_slider
 
 		// slide_image, slide_alt, slide_caption
 		if(is_array($slides) && !empty($slides)) {
-
 			if($params->get('randomize')) {
 				shuffle($slides);
 			}

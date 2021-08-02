@@ -36,9 +36,7 @@ function ResizeSlider(Glide, Components, Events) {
       const glideTrack = document.querySelector(selectors.glideTrack);
       const glideTrackHeight = glideTrack ? glideTrack.offsetHeight : 0;
 
-      if (activeSlideHeight !== glideTrackHeight) {
-        glideTrack.style.height = `${activeSlideHeight}px`;
-      }
+      glideTrack.style.height = `${activeSlideHeight}px`;
     },
   };
 
@@ -56,8 +54,6 @@ function setupSlider() {
   const sliders = Array.from(document.querySelectorAll('.js-resp-slider'));
 
   sliders.forEach(slider => {
-    const dotNav = slider.dataset.dotNavigation;
-    const arrowNav = slider.dataset.arrowNavigation;
     const keyboardNav = slider.dataset.keyboardNavigation;
     const reverse = slider.dataset.reverse;
     const loop = slider.dataset.loop;
