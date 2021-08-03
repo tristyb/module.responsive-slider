@@ -32,9 +32,7 @@ function ResizeSlider(Glide, Components, Events) {
         selectors.glideSlideNextActive
       );
       const activeSlideHeight = activeSlide ? activeSlide.offsetHeight : 0;
-
       const glideTrack = document.querySelector(selectors.glideTrack);
-      const glideTrackHeight = glideTrack ? glideTrack.offsetHeight : 0;
 
       glideTrack.style.height = `${activeSlideHeight}px`;
     },
