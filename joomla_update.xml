@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <updates>
 	<update>
 		<name>Tristan's Responsive Slider</name>
-		<description>Updated to use glide.js</description>
+		<description>Testing update</description>
 		<element>mod_tristans_responsive_slider</element>
 		<type>module</type>
 		<version>1.0</version>
@@ -11,7 +11,10 @@
 		</downloads>
 		<maintainer>Tristan Brookes</maintainer>
 		<maintainerurl>https://tristanbrook.es</maintainerurl>
-		<targetplatform name="joomla" version="3.6" />
-		<client>site</client>
+		<tags>
+    	<tag>stable</tag>
+    </tags>
+		<targetplatform name="joomla" version="3.*" />
+		<client>0</client>
 	</update>
 </updates>
