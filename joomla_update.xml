@@ -2,7 +2,7 @@
 <updates>
 	<update>
 		<name>Tristan's Responsive Slider</name>
-		<description>Testing update</description>
+		<description>A simple slider module with repeatable fields and a no-nonsense setup.</description>
 		<element>mod_tristans_responsive_slider</element>
 		<type>module</type>
 		<version>1.0</version>
