@@ -28,7 +28,8 @@
 	</languages>
 
 	<updateservers>
-		<server type="extension" name="mod_tristans_responsive_slider" priority="1">https://tristanbrook.es/files/.xml</server>
+		<server type="extension" name="mod_tristans_responsive_slider" priority="1">http://localhost:9000/files/joomla_update.xml</server>
+		<!-- <server type="extension" name="mod_tristans_responsive_slider" priority="1">https://tristanbrook.es/files/.xml</server> -->
 	</updateservers>
 
 	<config>
