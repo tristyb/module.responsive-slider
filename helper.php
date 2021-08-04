@@ -14,9 +14,8 @@ class mod_tristans_responsive_slider
 		$slides = json_decode(json_encode($params->get("slides_repeater")), true);
 		$html = "";
 
-		// slide_image, slide_alt, slide_caption
 		if(is_array($slides) && !empty($slides)) {
-			if($params->get('randomize')) {
+			if($params->get('randomize') === "true") {
 				shuffle($slides);
 			}
 
