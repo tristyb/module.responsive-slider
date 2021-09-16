@@ -31,7 +31,7 @@
 		</div>
 	<?php } ?>
 
-	<?php if ($params->get('direction_nav') === 'true') { ?>
+	<?php if ($params->get('control_nav') === 'true') { ?>
 		<div class="resp-slider__dots" data-glide-el="controls[nav]">
 			<?php for($i = 0; $i < $slidesCount; $i++){ ?>
 				<button class="resp-slider__dot" data-glide-dir="=<?php echo $i; ?>"><?php echo $i; ?></button>
