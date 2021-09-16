@@ -54,6 +54,10 @@
       left: rem(20px);
       justify-content: space-between;
       transform: translateY(-50%);
+
+			.glide--rtl & {
+				flex-direction: row-reverse;
+			}
     }
 
       .resp-slider__arrow {

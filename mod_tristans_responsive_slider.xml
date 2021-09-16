@@ -8,7 +8,7 @@
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>tristan@tristanbrook.es</authorEmail>
 	<authorURL>https://tristanbrook.es</authorURL>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	<description>MOD_TRISTANSRESPONSIVESLIDER_DESC</description>
 
 	<files>
@@ -42,7 +42,7 @@
 			</fieldset>
 
 			<fieldset name="animation" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_OPTIONS">
-				<field name="animation_reverse" type="radio" default="true" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_REVERSE" description="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_REVERSE_DESC">
+				<field name="animation_reverse" type="radio" default="false" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_REVERSE" description="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_REVERSE_DESC">
 					<option value="true">JYES</option>
 					<option value="false">JNO</option>
 				</field>
