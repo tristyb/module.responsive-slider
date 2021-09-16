@@ -44,6 +44,10 @@
             padding: rem(10px) rem(16px);
             font-size: rem(16px);
           }
+
+					.glide--rtl & {
+						text-align: left;
+					}
         }
 
     .resp-slider__arrows {
