@@ -53,6 +53,8 @@
 				</field>
 
 				<field name="animation_speed" type="number" default="600" label="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_SPEED" description="MOD_TRISTANSRESPONSIVESLIDER_ANIMATION_SPEED_DESC" />
+
+				<field name="autoplay_speed" type="number" default="0" label="MOD_TRISTANSRESPONSIVESLIDER_AUTOPLAY" description="MOD_TRISTANSRESPONSIVESLIDER_AUTOPLAY_DESC" />
 			</fieldset>
 
 			<fieldset name="other" label="MOD_TRISTANSRESPONSIVESLIDER_OTHER_OPTIONS">

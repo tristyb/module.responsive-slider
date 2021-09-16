@@ -15,6 +15,7 @@
 	data-reverse="<?php echo $params->get('animation_reverse'); ?>"
 	data-loop="<?php echo $params->get('animation_loop'); ?>"
 	data-animation-ms="<?php echo $params->get('animation_speed'); ?>"
+	data-autoplay-ms="<?php echo $params->get('autoplay_speed'); ?>"
 >
   <div class="resp-slider__track  glide__track" data-glide-el="track">
     <ul class="resp-slider__slides  glide__slides">
