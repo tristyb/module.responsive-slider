@@ -110,6 +110,11 @@
 
         + .resp-slider__dot {
           margin-left: rem(4px);
+
+					.glide--rtl & {
+						margin-right: rem(4px);
+						margin-left: 0;
+					}
         }
 
         &.glide__bullet--active {
