@@ -31,7 +31,7 @@ class mod_tristans_responsive_slider
 					$caption = $slide['slide_caption'];
 				}
 
-				$html.= '<li class="resp-slider__slide  glide__slide">';
+				$html.= '<li class="resp-slider__slide  splide__slide">';
 				$html.= '<img class="resp-slider__image" src="'.$slide['slide_image'].'" alt="'.$alt.'">';
 
 				if($caption !== "") {

@@ -2,7 +2,7 @@
 	"name": "tristans-responsive-slider",
 	"version": "0.0.2",
 	"dependencies": {
-		"@glidejs/glide": "^3.4.1"
+		"@splidejs/splide": "^2.4.21"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.15.0",
