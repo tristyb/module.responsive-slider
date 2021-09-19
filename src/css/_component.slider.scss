@@ -39,6 +39,7 @@
     .resp-slider__slides {
       margin: 0;
       padding: 0;
+			transition: height .3s ease-in;
     }
 
       .resp-slider__slide {
