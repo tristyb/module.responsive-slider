@@ -1,6 +1,25 @@
 import Splide from '@splidejs/splide';
 import Transition from './transition';
 
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function () {
+		var context = this, args = arguments;
+		var later = function () {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
 // Slider init function.
 function setupSlider() {
 	const sliders = Array.from(document.querySelectorAll('.js-resp-slider'));
@@ -57,6 +76,17 @@ function setupSlider() {
 				slideList.style.height = nextImgHeight;
 			}, 10);
 		});
+
+		const resizeImgCheck = debounce(function () {
+			const currentSlideImg = slider.querySelector('.resp-slider__slide.is-active img').getBoundingClientRect();
+			const currentSlideImgHeight = `${Math.ceil(currentSlideImg.height)}px`;
+
+			setTimeout(() => {
+				slideList.style.height = currentSlideImgHeight;
+			}, 10);
+		}, 250);
+
+		window.addEventListener('resize', resizeImgCheck);
 	});
 }
 
