@@ -3,7 +3,6 @@ import Transition from './transition';
 
 // Slider init function.
 function setupSlider() {
-
 	const sliders = Array.from(document.querySelectorAll('.js-resp-slider'));
 
 	sliders.forEach(slider => {

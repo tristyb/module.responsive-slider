@@ -8,7 +8,7 @@
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>tristan@tristanbrook.es</authorEmail>
 	<authorURL>https://tristanbrook.es</authorURL>
-	<version>1.1</version>
+	<version>2.0</version>
 	<description>MOD_TRISTANSRESPONSIVESLIDER_DESC</description>
 
 	<files>
@@ -27,8 +27,9 @@
 		<language tag="en-GB">language/en-GB/en-GB.mod_tristans_responsive_slider.sys.ini</language>
 	</languages>
 
+	<changelogurl>https://tristanbrook.es/files/changelogs/slider_changelog.xml</changelogurl>
+
 	<updateservers>
-		<!-- <server type="extension" name="mod_tristans_responsive_slider" priority="1">http://localhost:9000/files/joomla_update.xml</server> -->
 		<server type="extension" name="mod_tristans_responsive_slider" priority="1">https://tristanbrook.es/files/joomla_update.xml</server>
 	</updateservers>
 
