@@ -59,9 +59,14 @@
           left: 0;
           margin: 0;
           padding: rem(6px) rem(10px);
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 70%);
           color: #fff;
-          font-size: rem(14px);
+					font-size: rem(12px);
+					line-height: 1.2;
+
+					@media only screen and (min-width: 768px) {
+						font-size: rem(14px);
+					}
 
           @media screen and (min-width: em(1024px)) {
             padding: rem(10px) rem(16px);
