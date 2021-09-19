@@ -16,6 +16,16 @@
 		transform: translateX(rem(150px));
 	}
 
+	&.splide--rtl {
+		.splide__arrow--prev {
+			transform: translateX(rem(150px));
+		}
+
+		.splide__arrow--next {
+			transform: translateX(rem(-150px));
+		}
+	}
+
   &:hover {
 		.splide__arrow--prev,
     .splide__arrow--next {
@@ -57,7 +67,7 @@
             font-size: rem(16px);
           }
 
-					.glide--rtl & {
+					.splide--rtl & {
 						text-align: left;
 					}
         }
