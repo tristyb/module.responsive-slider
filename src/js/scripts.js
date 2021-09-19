@@ -1,8 +1,6 @@
 import Splide from '@splidejs/splide';
 import Transition from './transition';
 
-console.log(Transition);
-
 // Slider init function.
 function setupSlider() {
 
